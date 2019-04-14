@@ -1,0 +1,20 @@
+.custom_heading{
+  font-family: helvetica, arial, sans-serif !important;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 70px;
+  color:black;
+}
+.wrapper{
+  margin-top:10px;
+}
+.ovens {
+  display: flex;
+  flex-direction: row;
+}
+.product_mini_name,.ofer-price{
+   margin-bottom: 0px;
+  margin-left: 15%;
+;
+}

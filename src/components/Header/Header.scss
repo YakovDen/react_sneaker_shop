@@ -1,0 +1,52 @@
+//$green: #0aff21;
+//
+//h2{
+//    span{
+//        color: $green;
+//        & i {
+//            color: darken($green, 10%);
+//        }
+//    }
+//}
+
+//----------------------------
+.svg-inline--fa.fa-w-16 {
+    color: #FA8072;
+}
+h2,h4{
+  color: white;
+}
+//.but {
+//  background-color: transparent !important;
+//  border-color: #fff !important;
+//  color: white !important;
+//  width: 150%;
+//  margin-top: 550%;
+//}
+.nav-link{
+  padding-left: 1.5rem !important;
+  color: white !important;
+}
+.btn_info{
+ color: white !important;
+ border-color: transparent !important;
+}
+.btn_info:hover{
+  background-color: transparent !important;
+  border-style: none;
+}
+#intro {
+  background: url(/images/Crep.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  max-width: 100%;
+  height: 520px;
+  opacity: 1;
+}
+//----------------------
+@media (max-width:992px)
+{.avatar,.top-panel { display: none !important; } }
+
+
+
