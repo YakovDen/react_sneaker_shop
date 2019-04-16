@@ -33,7 +33,7 @@ class App extends Component {
                 <Header rrr={this.state.getA}/>
                 <Content/>
                 <Footer/>
-                <Authorization/>
+                {/*<Authorization/>*/}
                 {/*<Footer cbTest={this.getValue}/>*/}
             </div>
         );

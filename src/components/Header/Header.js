@@ -29,7 +29,34 @@ class Header extends React.Component{
     //
     //     this.props.setInfo();
     // };
-
+    authorizationClick = () => {
+       debugger; alert("I was clicked");
+       return( <div className="lean_overlay">
+            <div className="loginmodal">
+                <div className="logintitle">Authorization</div>
+                <form>
+                    <div>
+                        <label htmlFor="login"><span>Login</span></label>
+                        <input type="text" name="login" id="login" placeholder="Login"/>
+                    </div>
+                    <div className="clearfix">
+                        <label htmlFor="password"><span>Password</span></label>
+                        <input type="password" name="password" id="password"
+                               placeholder="Password"/>
+                    </div>
+                    <div className="clearfix">
+                        <label htmlFor="password"><span>Password confirmation</span></label>
+                        <input type="password" name="confirm_password" id="confirm_password"
+                               placeholder="Password confirmation"/>
+                    </div>
+                    <p className="clearfix bt_input">
+                        <input type="submit" name="submit" value="Registration"/>
+                    </p>
+                </form>
+            </div>
+        </div>
+       )      
+    };
     render() {
         // console.log('const a',this.props);
         // return(
@@ -39,6 +66,7 @@ class Header extends React.Component{
         //     </React.Fragment>
         //
         // )
+
         const collapsed = this.state.collapsed;
         const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
         const classTwo = collapsed ? 'navbar-toggler navbar-toggler-left collapsed' : 'navbar-toggler navbar-toggler-left';
@@ -63,7 +91,7 @@ class Header extends React.Component{
                             <li className="nav-item"><a className="nav-link waves-effect waves-light"  href="#">Actions</a></li>
                             <li className="nav-item"><a className="nav-link waves-effect waves-light"  href="#">Certificates</a></li>
                             <li className="nav-item"><a className="nav-link waves-effect waves-light"  href="#">Contacts</a></li>
-                            <li className="nav-item"><a className="nav-link waves-effect waves-light" href="#loginmodal"><FaUser/>
+                            <li className="nav-item"><a className="nav-link waves-effect waves-light" href="#" onClick={this.authorizationClick}><FaUser/>
                             <span className="top-panel">Personal area</span></a></li>
                         </ul>
                         <Form inline>
@@ -125,4 +153,8 @@ class Header extends React.Component{
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Header);
 export default Header;
+
+
+
+
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, Form} from 'react-redux-form';
+//import {Field, Form} from 'react-redux-form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Authorization.scss';
 
@@ -37,44 +37,44 @@ class Authorization extends React.Component{
                 type = el.type.toLowerCase();
 
                 // Разбираем все инпуты по типам и обрабатываем содержимое
-                switch (elId) {
-                    case "login" :
-                        if (el.name === "login" && value === "") {
-                            errorList.push(1);
-                        }
-                        break;
-                    case "password" :
-                        valuePassword = el.value;
-                        if (el.name === "password" && value === "")	{
-                            errorList.push(2);
-                        }
-
-                        break;
-                    case "confirm_password" :
-                        valuePassword_Confirm = el.value;
-                        if (el.name === "confirm_password" && value === ""){
-                            errorList.push(3);
-                            break;
-                        }
-                        if(valuePassword_Confirm !== valuePassword){
-                            errorList.push(4);
-                            break;
-                        }
-                        else {
-                            alert("Вы успешно зарегистрированы");
-                            window.location.href = 'index.html';
-                            return false;
-                        }
-                        break;
-                    default :
+                // switch (elId) {
+                //     case "login" :
+                //         if (el.name === "login" && value === "") {
+                //             errorList.push(1);
+                //         }
+                //         break;
+                //     case "password" :
+                //         valuePassword = el.value;
+                //         if (el.name === "password" && value === "")	{
+                //             errorList.push(2);
+                //         }
+                //
+                //         break;
+                //     case "confirm_password" :
+                //         valuePassword_Confirm = el.value;
+                //         if (el.name === "confirm_password" && value === ""){
+                //             errorList.push(3);
+                //             break;
+                //         }
+                //         if(valuePassword_Confirm !== valuePassword){
+                //             errorList.push(4);
+                //             break;
+                //         }
+                //         else {
+                //             alert("Вы успешно зарегистрированы");
+                //             window.location.href = 'index.html';
+                //             return false;
+                //         }
+                //         break;
+                //     default :
 
                         // Сюда попадают input-ы, которые не требуют обработки
                         // type = hidden, submit, button, image
                         break;
                 }
-            } else {
-
-            }
+            // } else {
+            //
+            // }
 
 
         }
@@ -85,37 +85,37 @@ class Authorization extends React.Component{
         // и возвращаем false
         let errorMsg = "При заполнении формы допущены следующие ошибки:\n";
 
-        for (let i = 0; i < errorList.length; i++) {
-            errorMsg += errorText[errorList[i]] + "\n";
-
-            if(errorList[i]===1){
-                field = doc.getElementsByTagName('input')[0];
-                button = doc.getElementsByTagName('input')[3];
-                field.classList.add('doAnimF');
-                button.classList.add('doAnimBut');
-            }
-            else if(errorList[i]===2){
-                field = doc.getElementsByTagName('input')[1];
-                button = doc.getElementsByTagName('input')[3];
-                field.classList.add('doAnimF');
-                button.classList.add('doAnimBut');
-            }
-            else if(errorList[i]===3){
-                field_confirm = doc.getElementsByTagName('input')[2];
-                button = doc.getElementsByTagName('input')[3];
-                field_confirm.classList.add('doAnimF');
-                button.classList.add('doAnimBut');
-            }
-            else if(errorList[i]===4) {
-                field = doc.getElementsByTagName('input')[1];
-                field_confirm = doc.getElementsByTagName('input')[2];
-                button = doc.getElementsByTagName('input')[3];
-                field.classList.add('doAnimF');
-                field_confirm.classList.add('doAnimF');
-                button.classList.add('doAnimBut');
-            }
-
-        }
+        // for (let i = 0; i < errorList.length; i++) {
+        //     errorMsg += errorText[errorList[i]] + "\n";
+        //
+        //     if(errorList[i]===1){
+        //         field = doc.getElementsByTagName('input')[0];
+        //         button = doc.getElementsByTagName('input')[3];
+        //         field.classList.add('doAnimF');
+        //         button.classList.add('doAnimBut');
+        //     }
+        //     else if(errorList[i]===2){
+        //         field = doc.getElementsByTagName('input')[1];
+        //         button = doc.getElementsByTagName('input')[3];
+        //         field.classList.add('doAnimF');
+        //         button.classList.add('doAnimBut');
+        //     }
+        //     else if(errorList[i]===3){
+        //         field_confirm = doc.getElementsByTagName('input')[2];
+        //         button = doc.getElementsByTagName('input')[3];
+        //         field_confirm.classList.add('doAnimF');
+        //         button.classList.add('doAnimBut');
+        //     }
+        //     else if(errorList[i]===4) {
+        //         field = doc.getElementsByTagName('input')[1];
+        //         field_confirm = doc.getElementsByTagName('input')[2];
+        //         button = doc.getElementsByTagName('input')[3];
+        //         field.classList.add('doAnimF');
+        //         field_confirm.classList.add('doAnimF');
+        //         button.classList.add('doAnimBut');
+        //     }
+        //
+        // }
         /*  doc.getElementsByTagName('input')[3].disabled= '0'; */
 
         alert(errorMsg);
@@ -128,7 +128,7 @@ class Authorization extends React.Component{
            <div className="lean_overlay">
                <div className="loginmodal">
                    <div className="logintitle">Authorization</div>
-                   <Form onSubmit={this.validateForm}>
+                   <form onSubmit={this.validateForm}>
                        <div>
                            <label htmlFor="login"><span>Login</span></label>
                            <input type="text" name="login" id="login" placeholder="Login"/>
@@ -146,7 +146,7 @@ class Authorization extends React.Component{
                        <p className="clearfix bt_input">
                            <input type="submit" name="submit" value="Registration"/>
                        </p>
-                   </Form>
+                   </form>
                </div>
            </div>
         )
